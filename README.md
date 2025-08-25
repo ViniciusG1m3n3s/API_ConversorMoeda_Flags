@@ -31,12 +31,7 @@ A modern and responsive currency converter application built with vanilla JavaSc
 ## 🌟 Key Improvements Over Tutorial
 
 - Added country flags visualization using API Ninjas
-- Enhanced UI with modern design elements
-- Implemented loading states with spinner
-- Added error handling with user feedback
-- Improved responsive design
-- Added "New Conversion" functionality
-
+  
 ## 🎨 Design Features
 
 - Clean and minimalist interface
