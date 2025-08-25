@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://unpkg.com/imask"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Conversor de Moeda - API</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Moeda</h1>
+        <form action="" class="converter-form" id="converterForm">
+            <div class="currency-row">
+                <div class="currency-input">
+                    <label for="amount">Valor</label>
+                    <input type="number" name="value" id="amount" placeholder="0" required step="0.01" min="0" class="input"/>
+                </div>
+                <div class="currency-select">
+                    <label for="fromCurrency">Moeda Origem</label>
+                    <select name="fromCurrency" id="fromCurrency" required>
+                        <option value="USD">USD - Dólar</option>
+                        <option value="EUR">EUR - Euro</option>
+                        <option value="BRL" selected>BRL - Real</option>
+                        <option value="GBP">GBP - Libra</option>
+                        <option value="JPY">JPY - Iene</option>
+                        <option value="CAD">CAD - Dólar Canadense</option>
+                        <option value="AUD">AUD - Dólar Australiano</option>
+                        <option value="CHF">CHF - Franco Suíço</option>
+                        <option value="CNY">CNY - Yuan</option>
+                        <option value="ARS">ARS - Peso Argentino</option>   
+                    </select>
+                </div>
+            </div>
+
+            <div class="currency-row">
+                <div class="currency-input">
+                    <label for="converted-amount">Resultado - Valor Convertido</label>
+                    <input type="text" id="convertedAmount" placeholder="0" readonly class="input"/>
+                </div>
+                <div class="currency-select">
+                    <label for="toCurrency">Moeda Destino</label>
+                    <select id="toCurrency" required>
+                        <option value="USD" selected>USD - Dólar</option>
+                        <option value="EUR">EUR - Euro</option>
+                        <option value="BRL">BRL - Real</option>
+                        <option value="GBP">GBP - Libra</option>
+                        <option value="JPY">JPY - Iene</option>
+                        <option value="CAD">CAD - Dólar Canadense</option>
+                        <option value="AUD">AUD - Dólar Australiano</option>
+                        <option value="CHF">CHF - Franco Suíço</option>
+                        <option value="CNY">CNY - Yuan</option>
+                        <option value="ARS">ARS - Peso Argentino</option>   
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="converter-btn" id="converterBtn">Converter Moeda</button>
+        </form>
+        
+        <div class="loading">
+            <div class="spinner">
+            </div>
+            <p>Buscando cotação...</p>
+        </div>
+
+        <div class="result hidden">
+            <div class="convertion-results">
+                <h1 class="amount-value">200</h1>
+                <h1 class="from-currency">BRL</h1>
+                <div class="flagFrom"></div>
+                <h1> = </h1>
+                <h1 class="amount-converted">1300</h1>
+                <h1 class="to-currency">USD</h1>
+                <div class="flagTo"></div>
+            </div>
+            <div class="convertion-rate">
+                <p>Taxa: 1 BRL = 0.132 USD</p>
+            </div>
+        </div>
+
+        <button class="reset-btn hidden">Nova Conversão</button>
+
+        <div class="error hidden">
+            <h1 class="error-title">Falha de comunicação com a API.</h1>
+            <p>Tente novamente mais tarde.</p>
+        </div>
+
+        <div class="div-footer">
+            <p>Powered by <a href="https://exchangerate-api.com/" target="_blank">exchangerate-api</a></p>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
